@@ -19,7 +19,7 @@
 ?>
         <!-- Pour chaque contenu à afficher -->
         <h3>
-            <!-- Fais un lien vers la page du contenu à afficher -->
+            <!-- Fais un lien vers la page du contenu à afficher (Eg. single.php) -->
             <a href="<?php the_permalink(); ?>">
                 <?php the_title(); // affiche le titre ?>
             </a>

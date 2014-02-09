@@ -1,19 +1,19 @@
 <?php
-// définit que notre thème supporte (préfère) les balises html5
-add_theme_support('html5');
-
-// notre thème permet à l’utilisateur de saisir des menus dans l’interface d’administration
-add_theme_support('menus');
-
-/* Voir : http://codex.wordpress.org/add_theme_support
-   Pour d’autres fonctionnalités optionnelles des thèmes */
-
-
 // Supprime la barre d’outils (code HTML généré par WordPress plus concis)
 add_action('after_setup_theme', 'plus_admin_bar');
 function plus_admin_bar () {
     show_admin_bar(false);
 }
+
+// définit que notre thème supporte (préfère) les balises html5
+add_theme_support('html5');
+
+/* Voir : http://codex.wordpress.org/add_theme_support
+   Pour d’autres fonctionnalités optionnelles des thèmes */
+
+
+// notre thème permet à l’utilisateur de saisir des menus dans l’interface d’administration
+add_theme_support('menus');
 
 /*
  * Définit le nom des menus que l’utilisateur pourra ajouter

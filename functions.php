@@ -2,21 +2,21 @@
 // définit que notre thème supporte (préfère) les balises html5
 add_theme_support('html5');
 
-// notre thème permet à l'utilisateur de saisir des menus dans l'interface d'administration
+// notre thème permet à l’utilisateur de saisir des menus dans l’interface d’administration
 add_theme_support('menus');
 
 /* Voir : http://codex.wordpress.org/add_theme_support
-   Pour d'autres fonctionnalités optionnelles des thèmes */
+   Pour d’autres fonctionnalités optionnelles des thèmes */
 
 
-// Supprime la barre d'outils (code HTML généré par WordPress plus concis)
+// Supprime la barre d’outils (code HTML généré par WordPress plus concis)
 add_action('after_setup_theme', 'plus_admin_bar');
 function plus_admin_bar () {
     show_admin_bar(false);
 }
 
 /*
- * Définit le nom des menus que l'utilisateur pourra ajouter
+ * Définit le nom des menus que l’utilisateur pourra ajouter
  */
 register_nav_menus(array(
     // une ligne pour chaque menu : identifiant et nom affiché
@@ -58,7 +58,7 @@ function ajout_post_types() {
             'has_archive' => true,
             // Les Champs de formulaire qui seront saisis et affichés. Eg. Titre et Contenu
             'supports' => array( 'title', 'editor' ),
-            // Pour l'ajout de Champs personnalisé voir le plug-in Meta Box.
+            // Pour l’ajout de Champs personnalisé voir le plug-in Meta Box.
         )
     );
     // Mettre en commentaire la ligne qui suit après avoir testé le bon fonctionnement.

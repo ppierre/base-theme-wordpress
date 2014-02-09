@@ -1,7 +1,7 @@
 <!--
     'taxonomy-competences-CSS.php' : Template utilisé quand on doit afficher
         les pages correspondant à la "competences" "CSS"
-    Rq. C'est pour les termes des taxonomies personnalisé :
+    Rq. C’est pour les termes des taxonomies personnalisé :
         'taxonomy-nomTaxonomie-terme.php'
 -->
 <?php get_header(); ?>

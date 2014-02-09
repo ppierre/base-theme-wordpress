@@ -1,8 +1,8 @@
 <!--
-    'single.php' : Template utilisé quand on doit afficher la page d'un Post (Article).
-    Rq: pour une Page c'est : 'page.php'
+    'single.php' : Template utilisé quand on doit afficher la page d’un Post (Article).
+    Rq: pour une Page c’est : 'page.php'
 
-    Eg. est utilisée pour afficher l'intégralité du Post
+    Eg. est utilisée pour afficher l’intégralité du Post
 -->
 
 <!-- inclus header.php -->

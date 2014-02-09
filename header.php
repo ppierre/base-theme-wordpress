@@ -1,6 +1,6 @@
 <!doctype html>
-<!-- Code HTML qui est commun au début de toutes les pages -->
-<!-- Balise HTML ouverte dans header.php et fermée dans footer.php -->
+<!-- Code HTML qui est commun au debut de toutes les pages -->
+<!-- Balise HTML ouverte dans header.php et fermee dans footer.php -->
 <html>
 <head>
     <title><?php wp_title("|",true,"right") ?><?php bloginfo('name'); ?></title>

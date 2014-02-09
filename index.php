@@ -1,12 +1,12 @@
 <!--
-    'index.php' : Template par défaut.
-    Rq. pour la page d’accueil, c’est :
+    'index.php' : Template par defaut.
+    Rq. pour la page d accueil, c est :
       'home.php' pour une liste de Posts (Articles)
-      'front-page.php' une page ou une liste suivant les réglages
+      'front-page.php' une page ou une liste suivant les reglages
 
-    Eg. il est préférable d’utiliser un Template plus spécialisé
+    Eg. il est preferable d utiliser un Template plus specialise
       'archive.php' pour les listes de Posts (Articles)
-      Et d’autres : http://codex.wordpress.org/Template_Hierarchy
+      Et d autres : http://codex.wordpress.org/Template_Hierarchy
 -->
 
 <!-- inclus header.php -->

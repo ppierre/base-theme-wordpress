@@ -1,7 +1,7 @@
 <!--
-    'taxonomy-competences.php' : Template utilisé quand on doit afficher
-        les pages correspondant à une certaine "competences" (passer dans l’URL)
-    Rq. C’est pour les taxonomies personnalisé : 'taxonomy-nomTaxonomie.php'
+    'taxonomy-competences.php' : Template utilise quand on doit afficher
+        les pages correspondant a une certaine "competences" (passer dans l URL)
+    Rq. C est pour les taxonomies personnalise : 'taxonomy-nomTaxonomie.php'
 -->
 <?php get_header(); ?>
 

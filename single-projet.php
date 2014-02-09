@@ -1,6 +1,6 @@
 <!--
-    'single-projet.php' : Template utilisé quand on doit afficher la page d’un "projet".
-    Rq: C’est pour les types personnalisés : 'single-nomDuType.php'
+    'single-projet.php' : Template utilise quand on doit afficher la page d un "projet".
+    Rq: C est pour les types personnalises : 'single-nomDuType.php'
 -->
 <?php get_header(); ?>
 

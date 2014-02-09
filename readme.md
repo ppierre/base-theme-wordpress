@@ -82,10 +82,11 @@ Les champs de formulaires ajoutés par "Meta Box" sont [regroupés par Boîte](h
 Pour chaque Boîte vous devez penser :
 * [Le titre de la boîte](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L97-98)
 * [Sur quels types de contenu elle sera affichée](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L99-100)
-* Sa [liste de champs de formulaire](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L102-112) et pour [chaque champ](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L104-111) :
+* Sa [liste de champs de formulaire](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L102-112) et pour [chaque champ](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L103-111) :
   * [Son nom affiché](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L105-106)
   * [Son identifiant (unique)](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L107-108)
   * [Son type](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L109-110)
+
 *[https://github.com/rilwis/meta-box/blob/master/demo/demo.php](https://github.com/rilwis/meta-box/blob/master/demo/demo.php)*
 
 Lire la documentation et penser à regarder les options des différents types de champs.

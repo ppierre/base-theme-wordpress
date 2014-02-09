@@ -14,14 +14,27 @@
 
 <!-- On obtient les champs personnalisés avec la fonction 'get_post_custom()' -->
         <?php $custom_fields = get_post_custom(); ?>
-<!--
+
+<!-- N'est pas affiché dans la page : regarder le code HTML pour voir
+
      C’est un tableau associatif contenant les valeurs dans des tableaux
-                    <?php print_r($custom_fields); ?>
+                    <?php print_r($custom_fields);
+                    /* Array (
+                        [pp_url] => Array
+                            (
+                                [0] => http://mon.projet.org/
+                            )
+                       )*/?>
      Les valeurs sont classées par l’identifiant choisi lors de la déclaration du champ
-     Ex. 'pp_url' : <?php print_r($custom_fields["pp_url"]); ?>
+     Ex. 'pp_url' : <?php print_r($custom_fields["pp_url"]);
+                    /*Array
+                    (
+                        [0] => http://mon.projet.org/
+                    )*/?>
      Comme les valeurs peuvent être multiples, elles sont toujours sous la forme d’un tableau
      Si la valeur est unique, il suffit :
-     Ex. 'pp_url' : <?php print_r($custom_fields["pp_url"][0]); ?>
+     Ex. 'pp_url' : <?php print_r($custom_fields["pp_url"][0]);
+                    /*        http://mon.projet.org/ */ ?>
 -->
         <!-- Exemple d’usage d’un champ personnalisé pour l’URL d’un lien -->
         <p><a href="<?php echo esc_url($custom_fields["pp_url"][0]) ?>">lien du projet</a></p>

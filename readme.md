@@ -94,7 +94,7 @@ Lire la documentation et penser à regarder les options des différents types de
 ### Afficher les valeurs personnalisées
 
 Pour afficher dans le template les champs personnalisés :
-* [Récupérez les "custom_fields"](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L20-21) : C'est un tableau associatif.
+* [Récupérez les "custom_fields"](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L15-16) : [C'est un tableau associatif](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L20-21).
 * [Utilisez l'identifiant d'un champ personnalisé](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L28-29) pour lire ses valeurs : C'est un tableau.
   * Si la valeur est unique, [prendre l'indice `[0]`](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L34-36).
 

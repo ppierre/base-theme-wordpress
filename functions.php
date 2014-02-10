@@ -34,11 +34,11 @@ function ajout_scripts() {
     */
     wp_enqueue_style( 'typo-couleur', get_stylesheet_directory_uri() . '/css/typo-couleur.css' );
 
-    /* Pour le JavaScript :
-       http://codex.wordpress.org/Function_Reference/wp_enqueue_script
-       Rq. Il est possible de spécifier que ses scripts dépendent de jQuery
+    /* Pour le JavaScript : http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+       Il est possible de spécifier que ses scripts dépendent de jQuery,
        WordPress ajoutera automatiquement les dépendances.
     */
+    wp_enqueue_script('perso', get_stylesheet_directory_uri() . '/js/perso.js', array('jquery'));
 }
 
 /*

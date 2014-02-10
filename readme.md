@@ -18,9 +18,11 @@ Le code HTML généré est celui retourné par votre fichier de template qui lui
 ### Les fichiers CSS et JavaScript
 
 Ne pas les placer dans vos templates. Laisser WordPress le faire pour vous.
-* Déclarer vos fichiers CSS dans le fichier [`functions.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L26-42)
-* WordPress les placera dans vos pages par le biais de [la fonction `wp_head()` placée à la fin de HEAD](https://github.com/ppierre/base-theme-wordpress/blob/master/header.php#L7-10).
-* Il existe la même [fonctionnalité pour JavaScript (*WP codex*)](http://codex.wordpress.org/Function_Reference/wp_enqueue_script). Avec une fonction [`wp_footer()`placée à la fin de BODY](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L13-15).
+* Déclarer vos fichiers CSS dans le fichier [`functions.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L31-35)
+  * WordPress les placera dans vos pages par le biais de [la fonction `wp_head()` placée à la fin de HEAD](https://github.com/ppierre/base-theme-wordpress/blob/master/header.php#L7-10).
+* Il existe la même [fonctionnalité pour JavaScript (*WP codex*)](http://codex.wordpress.org/Function_Reference/wp_enqueue_script).
+  * [Simplement lui indiqué le chemin comme pour les feuilles de style](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L37-41), bonus vous pouvez dire que votre script à besoin de jQuery : WordPress le chargera pour vous.
+  * On peut optimiser le chargement des scripts en les plaçant à la fin de BODY ([wp_footer()](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L13-15)) ou en les chargeant de façon asynchrone.
 
 ## Les Templates
 

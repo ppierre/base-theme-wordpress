@@ -6,6 +6,10 @@
         "taxonomy" => "competences",
         "title_li" => ""
     )); ?>
+    <h3>Lien vers la liste des éléments classée par le terme "CSS" dans la taxonomie "competences"</h3>
+    <a href="<?php echo get_term_link("CSS","competences") ?>">liste compétences CSS</a>
+    <h3>Lien vers la liste des Projets (custom post type)</h3>
+    <a href="<?php echo get_post_type_archive_link("projet") ?>">liste projets</a>
 </aside>
 
 <footer>Le "footer" du site</footer>

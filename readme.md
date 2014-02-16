@@ -32,7 +32,7 @@ Ce sont eux qui affichent le contenu par le biais de la ['boucle' WordPress](htt
 
 `index.php` n'est pas l'endroit où vous devez placer en premier le code de vos pages. Préférez un template plus approprié :
 * `archive.php` pour les listes d’Articles
-* `home.php` ou `front-page.php` pour une page ou une liste suivant les réglages
+* `home.php` ou [`front-page.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/front-page.php#L2) pour une page ou une liste suivant les réglages
 *[http://codex.wordpress.org/Template_Hierarchy](http://codex.wordpress.org/Template_Hierarchy)*
 
 ## Les types personnalisés
@@ -126,3 +126,11 @@ Simplement, [demandez à WordPress de faire un menu (liste)](https://github.com/
 Il existe des fonctions donnant l'URL :
 * [Lien vers la liste des éléments pour un terme d'une taxonomie](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L9-10)
 * [Lien vers l'archive d'un type personnalisé](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L11-12)
+
+#### Par une seconde "boucle"
+
+Si vous voulez afficher deux contenus sans rapport sur la même page, vous devez [faire une seconde boucle](https://github.com/ppierre/base-theme-wordpress/blob/master/front-page.php#L23-42) :
+* [La classe WP_Query retourne un objet qui pilote cette boucle.](https://github.com/ppierre/base-theme-wordpress/blob/master/front-page.php#L26-27)
+* [La boucle se fait comme d'habitude, simplement en utilisant l'objet.](https://github.com/ppierre/base-theme-wordpress/blob/master/front-page.php#L28-30)
+
+[*Lire la documentation de WP_Query !*](http://codex.wordpress.org/Class_Reference/WP_Query#Parameters) Pour connaître ses paramètres.

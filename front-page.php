@@ -24,10 +24,10 @@
 <h3> Affiche deux projets </h3>
 <?php
     // Fais une requête sur les projets, limitée à deux résultats.
-    $projet = new WP_Query('post_type=projet&posts_per_page=2');
+    $projets = new WP_Query('post_type=projet&posts_per_page=2');
     /* la boucle est identique à une boucle normale.
        Simplement, tout est préfixé par : "$projet->..." */
-    while ($projet->have_posts()): $projet->the_post(); ?>
+    while ($projets->have_posts()): $projets->the_post(); ?>
             <div>
                 <h3>
                     <a href="<?php the_permalink(); ?>">

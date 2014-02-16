@@ -114,3 +114,19 @@ function ajout_meta_boxes( $meta_boxes )
 
     return $meta_boxes;
 }
+
+/*
+ * Change les requêtes de WordPress
+ * http://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts
+*/
+add_filter('pre_get_posts', 'modifie_requete_wp');
+function modifie_requete_wp( $query ) {
+    // Est appelé pour chaque page. Testez si c'est la requête que vous voulez changer.
+
+    // Test si page d'accueil (front-page.php)
+    if ( $query->is_home() ) {
+        // Limite à un résultat
+        $query->query_vars['posts_per_page'] = 1;
+    }
+
+}

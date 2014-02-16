@@ -134,3 +134,12 @@ Si vous voulez afficher deux contenus sans rapport sur la même page, vous devez
 * [La boucle se fait comme d'habitude, simplement en utilisant l'objet.](https://github.com/ppierre/base-theme-wordpress/blob/master/front-page.php#L28-30)
 
 [*Lire la documentation de WP_Query !*](http://codex.wordpress.org/Class_Reference/WP_Query#Parameters) Pour connaître ses paramètres.
+
+## Modifier la requête de WordPress
+
+Vous ne devez pas utiliser WP_Query pour changer le contenu affiché par défaut (sauf pour les pages statiques). Il faut modifier la requête faite par WordPress.
+
+Vous devez :
+* [Mettre en place un filtre pour changer la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L118-124)
+* [Déterminer si c'est la page dont vous voulez modifier la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L126-127)
+* [Modifier les paramètres de la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L128-129)

@@ -143,3 +143,12 @@ Vous devez :
 * [Mettre en place un filtre pour changer la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L118-124)
 * [Déterminer si c'est la page dont vous voulez modifier la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L126-127)
 * [Modifier les paramètres de la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L128-129)
+
+## Liste triée par taxonomie
+
+Quand l'on utilise une taxonomie, il existe une page pour chaque terme (`/competences/HTML`, `/competences/CSS`...).
+
+Si vous voulez faire une page qui liste tous les contenus triés suivant les termes de la taxonomie :
+* Dans l'interface d'administration, faire une page statique du même nom que la taxonomie (elle sera affichée à l’URL `/competences`)
+* Placer [un code affichera vos contenus triés](https://github.com/ppierre/base-theme-wordpress/blob/master/pages-competences.php#L18-61), dans le template spécifique à la page ([`page-competences.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/pages-competences.php#L2-3))
+  * Rq: le code fourni fait plusieurs requêtes, ce qui n'est pas une bonne pratique. Mais bon... c'est pour rester simple.

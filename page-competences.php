@@ -34,16 +34,16 @@
             'term' => $a_term->slug,
             'nopaging' => true,
         )); ?>
-        <h3><!-- Titre d'un "post" (avec lien) -->
+        <h3><!-- Titre d'une liste correspondant à un terme (avec lien vers la page du terme) -->
             <a href="<?php echo esc_url(get_term_link($a_term, TAXONOMY)) ?>" rel="tag">
                 <?php echo $a_term->name ?>
             </a>
         </h3>
         <?php
-        // boucle sur les projet qui ont cette compétences
+        // boucle sur les contenus qui correspondent à ce terme
         while ($projets->have_posts()): $projets->the_post(); ?>
         <div>
-            <h4>
+            <h4><!-- Titre d'un contenu (avec lien vers la page du contenu) -->
                 <a href="<?php the_permalink(); ?>">
                     <?php the_title(); ?>
                 </a>
@@ -51,12 +51,12 @@
             <?php the_excerpt(); ?>
         </div>
         <?php
-        // fin de la boucle des projets d'une compétence
+        // fin de la boucle des contenus correspondant à un terme
         endwhile;
         ?>
 
 <?php
-    // fin de la boucle des compétences
+    // fin de la boucle des termes
     endforeach;
 ?>
 

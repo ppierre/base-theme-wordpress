@@ -18,20 +18,25 @@
 <!-- Seconde boucle avec WP_Query -->
 <h2> Liste les projets classés par la taxonomie compétences</h2>
 <?php
-    // retrouve la liste des compétences (un tableau)
-    $competences = get_terms("competences");
-    // boucle sur les compétences
-    foreach ($competences as $une_competence):
-        // pour une compétence, cherche les projets
+    // Le nom de la taxonomie
+    const TAXONOMY = "competences";
+    // Le type associé à chercher
+    const POST_TYPE = 'projet';
+
+    // retrouve la liste des terms (un tableau)
+    $taxonomy_terms = get_terms(TAXONOMY);
+    // boucle sur les terms
+    foreach ($taxonomy_terms as $a_term):
+        // pour un terms, cherche les "post" du type défini
         $projets = new WP_Query(array(
-            'post_type' => 'projet',
-            'taxonomy' => 'competences',
-            'term' => $une_competence->slug,
+            'post_type' => POST_TYPE,
+            'taxonomy' => TAXONOMY,
+            'term' => $a_term->slug,
             'nopaging' => true,
         )); ?>
-        <h3><!-- Titre d'une compétences (avec lien) -->
-            <a href="<?php echo esc_url(get_term_link($une_competence, 'competences')) ?>" rel="tag">
-                <?php echo $une_competence->name ?>
+        <h3><!-- Titre d'un "post" (avec lien) -->
+            <a href="<?php echo esc_url(get_term_link($a_term, TAXONOMY)) ?>" rel="tag">
+                <?php echo $a_term->name ?>
             </a>
         </h3>
         <?php

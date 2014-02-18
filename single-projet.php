@@ -39,6 +39,12 @@
         <!-- Exemple d’usage d’un champ personnalisé pour l’URL d’un lien -->
         <p><a href="<?php echo esc_url($custom_fields["pp_url"][0]) ?>">lien du projet</a></p>
 
+    <!-- Ou utiliser les fonctions fournies par "meta box" :
+    http://www.deluxeblogtips.com/meta-box/helper-function-to-get-meta-value/
+    Elles retournent automatiquement une seule valeur ou un tableau suivant les cas.
+    Ex. 'pp_url' : <?php print_r(rwmb_meta("pp_url"));
+                /*        http://mon.projet.org/ */ ?>
+    -->
 <?php
     endwhile
 ?>

@@ -104,6 +104,16 @@ Ensuite, utiliser ce code [à l'endroit où vous voulez afficher la valeur](http
 
 Rq. les `print_r` sont juste pour les explications. [Ne pas les inclure dans vos pages !](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L18-38)
 
+#### Fonctions de "meta box" pour lire les valeurs personnalisées
+
+[`rwmb_meta`](http://www.deluxeblogtips.com/meta-box/helper-function-to-get-meta-value/) est une fonction fournie par "meta box" pour [afficher plus simplement les valeurs](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L42-46) :
+* Si c'est une valeur unique:
+  * Elle retourne simplement cette valeur
+* Si c'est un type complexe (l'indiquer en argument à l'appel)
+  * Elle retourne un tableau avec des clefs pour les valeurs
+* Si vous avez utilisé la propriété `'clone' => true`
+  * Elle retourne un tableau, __vous devez obligatoirement passer par elle dans ce cas__.
+
 ## Les menus
 
 ### Menu défini par l'éditeur du site

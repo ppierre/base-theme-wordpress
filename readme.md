@@ -164,3 +164,13 @@ Si vous voulez faire une page qui liste tous les contenus triés suivant les ter
 * Dans l'interface d'administration, faire une page statique du même nom que la taxonomie (elle sera affichée à l’URL `/competences`)
 * Placer [un code affichera vos contenus triés](https://github.com/ppierre/base-theme-wordpress/blob/master/page-competences.php#L18-61), dans le template spécifique à la page ([`page-competences.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/page-competences.php#L2-3))
   * Rq: le code fourni fait plusieurs requêtes, ce qui n'est pas une bonne pratique. Mais bon... c'est pour rester simple.
+
+## Liens propres à un "post"
+
+[`the_permalink`](http://codex.wordpress.org/Function_Reference/the_permalink) donne le lien vers la page d'un "post" (ou contenu personnalisé). Mais vous pouvez aussi :
+* Afficher les "tags" : [`the_tags`](http://codex.wordpress.org/Function_Reference/the_tags)
+* Afficher la ou les "category" : [`the_category`](http://codex.wordpress.org/Function_Reference/the_category)
+* Mais aussi les taxonomies personnalisées : [`the_terms`](http://codex.wordpress.org/Function_Reference/the_terms)
+  * Rq: contrairement aux autres elle demande l'ID du "post" en paramètre (`$post->ID`).
+
+Pour chaque il existe des variantes suivant que vous vouliez gérez vous même l'affichage (boucle en PHP) ou laisser WordPress le faire pour vous.

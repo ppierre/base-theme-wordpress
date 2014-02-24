@@ -24,6 +24,8 @@ Ne pas les placer dans vos templates. Laisser WordPress le faire pour vous.
   * [Simplement lui indiqué le chemin comme pour les feuilles de style](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L37-41), bonus vous pouvez dire que votre script à besoin de jQuery : WordPress le chargera pour vous.
   * On peut optimiser le chargement des scripts en les plaçant à la fin de BODY ([wp_footer()](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L17-19)) ou en les chargeant de façon asynchrone.
 
+Rq : La fonction utilisée pour le lien du fichier CSS : [`get_stylesheet_directory_uri`](http://codex.wordpress.org/Function_Reference/get_stylesheet_directory_uri), peut être utile pour intégrer des liens vers des éléments statiques dans vos templates. Mais je vous décourage de faire cela. Mettez les en place par les CSS, il suffit alors de faire un lien relatif depuis le code du fichier CSS.
+
 ## Les Templates
 
 Ce sont eux qui affichent le contenu par le biais de la ['boucle' WordPress](https://github.com/ppierre/base-theme-wordpress/blob/master/index.php#L16-30).

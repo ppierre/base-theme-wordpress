@@ -1,6 +1,6 @@
 <!--
-    'archive-projet.php' : Template utilise quand on doit afficher la liste des "projet".
-    Rq: C est pour les types personnalises : 'archive-nomDuType.php'
+    'archive-projet.php' : Template utilisé quand on doit afficher la liste des "projet".
+    Rq: C’est pour les types personnalisés : 'archive-nomDuType.php'
 -->
 <?php get_header(); ?>
 

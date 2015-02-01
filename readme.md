@@ -138,7 +138,7 @@ Simplement, [demandez à WordPress de faire un menu (liste)](https://github.com/
 Il existe des fonctions donnant l'URL :
 * [Lien vers la liste des éléments pour un terme d'une taxonomie](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L9-10)
 * [Lien vers l'archive d'un type personnalisé](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L11-12)
-* [Lien une page statique](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L14)
+* [Lien vers une page statique](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L14)
 
 #### Par une seconde "boucle"
 

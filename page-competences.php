@@ -1,12 +1,12 @@
 <!--
     'page-competences.php' : template personnalisé pour la page 'competences' (a créer dans WP)
-    Volontairement nommé comme la taxonomie servira d accueil de cette taxonomie.
+    Volontairement nommé comme la taxonomie servira d'accueil de cette taxonomie.
 -->
 
 <!-- inclus header.php -->
 <?php get_header(); ?>
 
-<h1>page-competences.php : sert d accueil de la taxonomie "competences"</h1>
+<h1>page-competences.php : sert d'accueil de la taxonomie "competences"</h1>
 <?php
     // pas besoin de boucle
     the_post();
@@ -34,7 +34,7 @@
             'term' => $a_term->slug,
             'nopaging' => true,
         )); ?>
-        <h3><!-- Titre d une liste correspondant à un terme (avec lien vers la page du terme) -->
+        <h3><!-- Titre d'une liste correspondant à un terme (avec lien vers la page du terme) -->
             <a href="<?php echo esc_url(get_term_link($a_term, TAXONOMY)) ?>" rel="tag">
                 <?php echo $a_term->name ?>
             </a>
@@ -43,7 +43,7 @@
         // boucle sur les contenus qui correspondent à ce terme
         while ($projets->have_posts()): $projets->the_post(); ?>
         <div>
-            <h4><!-- Titre d un contenu (avec lien vers la page du contenu) -->
+            <h4><!-- Titre d'un contenu (avec lien vers la page du contenu) -->
                 <a href="<?php the_permalink(); ?>">
                     <?php the_title(); ?>
                 </a>

@@ -61,11 +61,11 @@ WordPress possède deux taxonomies (Tag et Category). Mais vous pouvez ajouter v
 
 Quand vous faites une taxonomie personnalisée, vous devez réfléchir à :
 * [Son identifiant dans le code](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L73-74)
-* [Le nom affiché à l'utilisateur](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L79-80)
+* [Le nom affiché à l'utilisateur](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L79)
 * [Quels contenus va-t-elle classer (un ou plusieurs) ?](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L75-76)
 *[http://codex.wordpress.org/Function_Reference/register_taxonomy](http://codex.wordpress.org/Function_Reference/register_taxonomy)*
 
-Lire la documentation et penser à l'option `hierarchical` qui sert à dire si la nouvelle taxonomie doit se comporter comme des Tag ou comme une Category.
+Lire la documentation et penser à l'option [`hierarchical` qui sert à dire si la nouvelle taxonomie doit se comporter comme des Tag ou comme une Category](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L80).
 
 ## Les champs de saisie personnalisés
 
@@ -102,6 +102,8 @@ Lire la documentation et penser à regarder les options des [différents types d
 
 ### Afficher les valeurs personnalisées
 
+(version longue indépendante du plugin, lire titre suivant pour version courte).
+
 Pour afficher dans le template les champs personnalisés :
 * [Récupérez les "custom_fields"](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L15-16) : [C'est un tableau associatif](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L20-21).
 * [Utilisez l'identifiant d'un champ personnalisé](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L28-29) pour lire ses valeurs : C'est un tableau.
@@ -111,9 +113,11 @@ Ensuite, utiliser ce code [à l'endroit où vous voulez afficher la valeur](http
 
 Rq. les `print_r` sont juste pour les explications. [Ne pas les inclure dans vos pages !](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L18-38)
 
-#### Fonctions de "meta box" pour lire les valeurs personnalisées
+### Fonctions de "meta box" pour lire les valeurs personnalisées
 
-[`rwmb_meta`](http://www.deluxeblogtips.com/meta-box/helper-function-to-get-meta-value/) est une fonction fournie par "meta box" pour [afficher plus simplement les valeurs](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L42-46) :
+Utilise un "helper" fourni par le plug-in. Mais comprenez que les métadonnées sont gérées par WordPress, tout plug-in ne fait qu'ajouter des facilités de saisie. Rien d'autre.
+
+[`rwmb_meta`](http://metabox.io/docs/get-meta-value/) est une fonction fournie par "meta box" pour [afficher plus simplement les valeurs](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L42-46) :
 * Si c'est une valeur unique:
   * Elle retourne simplement cette valeur
 * Si c'est un type complexe (l'indiquer en argument à l'appel)
@@ -141,9 +145,9 @@ Simplement, [demandez à WordPress de faire un menu (liste)](https://github.com/
 #### Par le code
 
 Il existe des fonctions donnant l'URL :
-* [Lien vers la liste des éléments pour un terme d'une taxonomie](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L9-10)
-* [Lien vers l'archive d'un type personnalisé](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L11-12)
-* [Lien vers une page statique](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L14)
+* [Lien vers la liste des éléments pour un terme d'une taxonomie](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L9-10) [`get_term_link`](http://codex.wordpress.org/Function_Reference/)
+* [Lien vers l'archive d'un type personnalisé](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L11-12) [`get_post_type_archive_link`](http://codex.wordpress.org/Function_Reference/)
+* [Lien vers une page statique](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L14) [`get_permalink`](http://codex.wordpress.org/Function_Reference/get_permalink) et [`get_page_by_title`](http://codex.wordpress.org/Function_Reference/get_page_by_title)
 
 #### Par une seconde "boucle"
 
@@ -203,9 +207,9 @@ Les utilisateurs de votre site n'auront qu'à télécharger les images associée
 
 WordPress stocke simplement un identifiant pour les images (attachement) que vous avez associé à votre poste.
 
-  * Simplement, [récupérez la ou les valeurs (tableau) d'ID](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L57-L61).
+  * Simplement, [récupérez la ou les valeurs (tableau) d'ID](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L57-61).
     * On peut aussi [récupérer des renseignements plus complets (en spécifiant le type)](http://metabox.io/docs/get-meta-value/#section-returned-value). Mais ce n'est pas utile sauf si l'on désire renseigner soit même tous les paramètres des balises IMG.
-  * Avec la valeur de l'ID,  utilisez une [fonction qui retourne une balise IMG](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L63-L65) avec une certaine taille : [`wp_get_attachment_image`](http://codex.wordpress.org/Function_Reference/wp_get_attachment_image).
+  * Avec la valeur de l'ID,  utilisez une [fonction qui retourne une balise IMG](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L63-65) avec une certaine taille : [`wp_get_attachment_image`](http://codex.wordpress.org/Function_Reference/wp_get_attachment_image).
     * Voir aussi :
        * [`wp_get_attachment_image_src`](http://codex.wordpress.org/Function_Reference/wp_get_attachment_image_src)
        * [`get_image_tag`](http://codex.wordpress.org/Function_Reference/get_image_tag)

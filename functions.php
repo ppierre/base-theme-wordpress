@@ -76,8 +76,8 @@ function ajout_taxonomy() {
         array('projet'),
         // options, voir documentation
         array(
-            // Au minimum fixer son nom affiché ('label')
-            'label' => __( 'Compétences' )
+            'label' => __( 'Compétences' ), // Au minimum fixer son nom affiché ('label')
+            'hierarchical' => true // Tag (false) ou  Category (true)
         )
     );
     // Mettre en commentaire la ligne qui suit après avoir testé le bon fonctionnement.

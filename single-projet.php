@@ -11,7 +11,7 @@
 ?>
         <h3><?php the_title(); ?></h3>
         <?php the_content(); ?>
-
+        <?php the_post_thumbnail('portrait'); //affiche l'image à la une ?>
 <!-- On obtient les champs personnalisés avec la fonction 'get_post_custom()' -->
         <?php $custom_fields = get_post_custom(); ?>
 
@@ -40,11 +40,32 @@
         <p><a href="<?php echo esc_url($custom_fields["pp_url"][0]) ?>">lien du projet</a></p>
 
     <!-- Ou utiliser les fonctions fournies par "meta box" :
-    http://www.deluxeblogtips.com/meta-box/helper-function-to-get-meta-value/
+    http://metabox.io/docs/get-meta-value/
     Elles retournent automatiquement une seule valeur ou un tableau suivant les cas.
     Ex. 'pp_url' : <?php print_r(rwmb_meta("pp_url"));
                 /*        http://mon.projet.org/ */ ?>
     -->
+
+
+    <!-- Pour les champs mulptiples (ici images), il peut être nécessaire de demander un tableau :
+        Ex. 'pp_images' : <?php print_r(rwmb_meta("pp_images", array('multiple' => true)));
+    /*  Array ( [0] => 71, [1] => 72 ) */ ?>
+    -->
+
+        <h4>Listes d'images</h4>
+        <ul>
+            <!-- Récupère le tableau de la liste des images (liste d'ID d'autres formats possibles)
+    Va simplement faire une boucle affichant chaque image.
+            -->
+            <?php $listImagesID = rwmb_meta("pp_images", array('multiple' => true));
+                  foreach($listImagesID as $imageID):
+            ?>
+            <!-- Fonction la plus simple pour afficher une image : juste lui passer l'ID et la taille
+    D'autres fonctions existent pour plus de personnalisation ou pour obtenir l'URL et autre renseignement.-->
+            <li><?php echo wp_get_attachment_image($imageID,'paysage'); ?></li>
+
+            <?php endforeach; ?>
+        </ul>
 <?php
     endwhile
 ?>

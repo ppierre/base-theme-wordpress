@@ -76,7 +76,7 @@ Mais vous pouvez ajouter vos propres champs de formulaire.
 Dans l'interface d'administration, demander l'installation du plug-in "Meta Box".
 
 Avec, vous pourrez :
-* [Déclarer les champs de formulaire (dans `functions.php`).](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L87-116)
+* [Déclarer les champs de formulaire (dans `functions.php`).](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L87-125)
 * [Afficher les valeurs saisies dans les templates.](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L15-40)
 
 ### Déclarer les champs de formulaire
@@ -93,7 +93,7 @@ Pour chaque Boîte vous devez penser :
 
 *[https://github.com/rilwis/meta-box/blob/master/demo/demo.php](https://github.com/rilwis/meta-box/blob/master/demo/demo.php)*
 
-Lire la documentation et penser à regarder les options des différents types de champs.
+Lire la documentation et penser à regarder les options des [différents types de champs](http://metabox.io/docs/define-fields/#section-list-of-supported-field-type).
 
 ### Afficher les valeurs personnalisées
 
@@ -153,9 +153,9 @@ Si vous voulez afficher deux contenus sans rapport sur la même page, vous devez
 Vous ne devez pas utiliser WP_Query pour changer le contenu affiché par défaut (sauf pour les pages statiques). Il faut modifier la requête faite par WordPress.
 
 Vous devez :
-* [Mettre en place un filtre pour changer la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L118-124)
-* [Déterminer si c'est la page dont vous voulez modifier la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L126-127)
-* [Modifier les paramètres de la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L128-129)
+* [Mettre en place un filtre pour changer la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L127-133)
+* [Déterminer si c'est la page dont vous voulez modifier la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L135-136)
+* [Modifier les paramètres de la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L137-138)
 
 ## Liste triée par taxonomie
 
@@ -175,3 +175,33 @@ Si vous voulez faire une page qui liste tous les contenus triés suivant les ter
   * Rq: contrairement aux autres elle demande l'ID du "post" en paramètre (`$post->ID`).
 
 Pour chaque il existe des variantes suivant que vous vouliez gérez vous même l'affichage (boucle en PHP) ou laisser WordPress le faire pour vous.
+
+## Les images
+
+### L'image à la une (vignette/thumbnail)
+
+Si vous n'avez qu'une image ou qu'une de vos images "symbolise" le contenu : [utilisez cette fonction](http://codex.wordpress.org/Post_Thumbnails).
+  * Ajoutez la fonction [`add_theme_support('post-thumbnails');`](http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails) à votre [`functions.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L13-14)
+  * Et dans le [paramètre `'support'` de la déclaration de votre type personnalisé](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L60), ajouter `'thumbnail'`.
+    * Dans l'interface d'administration, vous devez pouvoir ajouter une "image à la une"
+  * Pour l'affichage, simplement utiliser le "tag" : [`the_post_thumbnail('portrait');`](http://codex.wordpress.org/Function_Reference/the_post_thumbnail)
+    * Le paramètre (facultatif) sert à indiquer la taille de l'image.
+    
+### Les tailles d'images
+
+Les utilisateurs de votre site n'auront qu'à télécharger les images associées au contenu. WordPress prend en charge leurs redimensionnements.
+
+ * Simplement, indiquez dans le [`functions.php` les tailles utilisées dans votre graphisme](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L143-L148) avec la fonction [`add_image_size`](http://codex.wordpress.org/Function_Reference/add_image_size) qui associe des dimensions à un "identifiant".
+   * Les fonctions destinées à une balise image (ou l'URL), toutes prennent en paramètre un "identifiant" pour indiquer la taille.
+   
+### Les images des champs personnalisés.
+
+WordPress stocke simplement un identifiant pour les images (attachement) que vous avez associé à votre poste.
+
+  * Simplement, [récupérez la ou les valeurs (tableau) d'ID](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L57-L61).
+    * On peut aussi [récupérer des renseignements plus complets (en spécifiant le type)](http://metabox.io/docs/get-meta-value/#section-returned-value). Mais ce n'est pas utile sauf si l'on désire renseigner soit même tous les paramètres des balises IMG.
+  * Avec la valeur de l'ID,  utilisez une [fonction qui retourne une balise IMG](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L63-L65) avec une certaine taille : [`wp_get_attachment_image`](http://codex.wordpress.org/Function_Reference/wp_get_attachment_image).
+    * Voir aussi :
+       * [`wp_get_attachment_image_src`](http://codex.wordpress.org/Function_Reference/wp_get_attachment_image_src)
+       * [`get_image_tag`](http://codex.wordpress.org/Function_Reference/get_image_tag)
+       * [`wp_get_attachment_metadata`](http://codex.wordpress.org/Function_Reference/wp_get_attachment_metadata)

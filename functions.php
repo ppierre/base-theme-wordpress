@@ -10,8 +10,8 @@ add_theme_support('html5');
 
 /* Voir : http://codex.wordpress.org/add_theme_support
    Pour d’autres fonctionnalités optionnelles des thèmes */
-
-
+// A ajouter en plus du 'supports' => array( ..,'thumbnail',..) pour pouvoir saisir l'image "à la une" dans l'interface d'un type personnalisé.
+add_theme_support('post-thumbnails');
 // notre thème permet à l’utilisateur de saisir des menus dans l’interface d’administration
 add_theme_support('menus');
 
@@ -56,8 +56,8 @@ function ajout_post_types() {
             'public' => true,
             // Si l’on veut des pages listant ce type Eg. 'true'
             'has_archive' => true,
-            // Les Champs de formulaire qui seront saisis et affichés. Eg. Titre et Contenu
-            'supports' => array( 'title', 'editor' ),
+            // Les Champs de formulaire qui seront saisis et affichés. Eg. Titre et Contenu. 'thumbnail' pour une image à la une (voir add_theme_support('post-thumbnails');)
+            'supports' => array( 'title', 'editor', 'thumbnail' ),
             // Pour l’ajout de Champs personnalisé voir le plug-in Meta Box.
         )
     );
@@ -109,6 +109,15 @@ function ajout_meta_boxes( $meta_boxes )
                 // son type
                 'type' => 'url',
             ),
+            // Répeter pour chaque champ : ses options
+            array(
+                // Son nom affiché
+                'name' => 'Image',
+                // Un identifiant unique, utilisé pour lire la valeur en PHP
+                'id'   => 'pp_images',
+                // son type
+                'type' => 'image',
+            ),
         )
     );
 
@@ -130,3 +139,10 @@ function modifie_requete_wp( $query ) {
     }
 
 }
+
+/**
+ * Definit une taille personalisé d'image
+ * http://codex.wordpress.org/Function_Reference/add_image_size
+ */
+add_image_size( 'portrait', 60, 100, true );
+add_image_size( 'paysage', 120, 50, false );

@@ -81,12 +81,12 @@ Avec, vous pourrez :
 
 ### Déclarer les champs de formulaire
 
-Les champs de formulaires ajoutés par "Meta Box" sont [regroupés par Boîte](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L95-113).
+Les champs de formulaires ajoutés par "Meta Box" sont [regroupés par Boîte](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L95-122).
 
 Pour chaque Boîte vous devez penser :
 * [Le titre de la boîte](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L97-98)
 * [Sur quels types de contenu elle sera affichée](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L99-100)
-* Sa [liste de champs de formulaire](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L102-112) et pour [chaque champ](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L103-111) :
+* Sa [liste de champs de formulaire](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L102-121) et pour [chaque champ](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L103-111) :
   * [Son nom affiché](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L105-106)
   * [Son identifiant (unique)](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L107-108)
   * [Son type](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L109-110)
@@ -94,6 +94,11 @@ Pour chaque Boîte vous devez penser :
 *[https://github.com/rilwis/meta-box/blob/master/demo/demo.php](https://github.com/rilwis/meta-box/blob/master/demo/demo.php)*
 
 Lire la documentation et penser à regarder les options des [différents types de champs](http://metabox.io/docs/define-fields/#section-list-of-supported-field-type).
+
+<sub>autocomplete button checkbox checkbox_list color date datetime divider file file_advanced
+     file_input heading hidden image image_advanced image_select map number oembed password plupload_image
+     post radio range select select_advanced slider taxonomy taxonomy_advanced text textarea
+     thickbox_image time url user wysiwyg</sub>
 
 ### Afficher les valeurs personnalisées
 

@@ -13,7 +13,7 @@ Regrouper le code commun à vos pages avec :
 * [`header.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/header.php#L2) : sera inclus dans votre template par [`get_header()`](https://github.com/ppierre/base-theme-wordpress/blob/master/index.php#L12-13)
 * [`footer.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L1) : sera inclus dans votre template par [`get_footer()`](https://github.com/ppierre/base-theme-wordpress/blob/master/index.php#L32-33)
 
-Le code HTML généré est celui retourné par votre fichier de template qui lui même inclut d'autres fichiers. Il n'est donc pas étonnant de débuter une balise dans [`header.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/header.php#L3-4) est de la finir dans [`footer.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L22).
+Le code HTML généré est celui retourné par votre fichier de template qui lui même inclut d'autres fichiers. Il n'est donc pas étonnant de débuter une balise dans [`header.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/header.php#L3-4) est de la finir dans [`footer.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L24).
 
 ### Les fichiers CSS et JavaScript
 
@@ -22,7 +22,7 @@ Ne pas les placer dans vos templates. Laisser WordPress le faire pour vous.
   * WordPress les placera dans vos pages par le biais de [la fonction `wp_head()` placée à la fin de HEAD](https://github.com/ppierre/base-theme-wordpress/blob/master/header.php#L7-10).
 * Il existe la même [fonctionnalité pour JavaScript (*WP codex*)](http://codex.wordpress.org/Function_Reference/wp_enqueue_script).
   * [Simplement lui indiqué le chemin comme pour les feuilles de style](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L37-41), bonus vous pouvez dire que votre script à besoin de jQuery : WordPress le chargera pour vous.
-  * On peut optimiser le chargement des scripts en les plaçant à la fin de BODY ([wp_footer()](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L17-19)) ou en les chargeant de façon asynchrone.
+  * On peut optimiser le chargement des scripts en les plaçant à la fin de BODY ([wp_footer()](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L19-21)) ou en les chargeant de façon asynchrone.
 
 Rq : La fonction utilisée pour le lien du fichier CSS : [`get_stylesheet_directory_uri`](http://codex.wordpress.org/Function_Reference/get_stylesheet_directory_uri), peut être utile pour intégrer des liens vers des éléments statiques dans vos templates. Mais je vous décourage de faire cela. Mettez les en place par les CSS, il suffit alors de faire un lien relatif depuis le code du fichier CSS.
 
@@ -138,6 +138,7 @@ Simplement, [demandez à WordPress de faire un menu (liste)](https://github.com/
 Il existe des fonctions donnant l'URL :
 * [Lien vers la liste des éléments pour un terme d'une taxonomie](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L9-10)
 * [Lien vers l'archive d'un type personnalisé](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L11-12)
+* [Lien une page statique](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L14)
 
 #### Par une seconde "boucle"
 

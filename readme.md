@@ -1,5 +1,29 @@
 # Exemple de code pour theme WordPress
 
+  * [Les fichiers de base](#les-fichiers-de-base)
+    * [Les "include"](#les-include)
+    * [Les fichiers CSS et JavaScript](#les-fichiers-css-et-javascript)
+  * [Les Templates](#les-templates)
+  * [Les types personnalises](#les-types-personnalises)
+  * [Les taxonomies personnalisees](#les-taxonomies-personnalisees)
+  * [Les champs de saisie personnalises](#les-champs-de-saisie-personnalises)
+    * [Declarer les champs de formulaire](#declarer-les-champs-de-formulaire)
+    * [Afficher les valeurs personnalisees](#afficher-les-valeurs-personnalisees)
+    * [Fonctions de "meta box" pour lire les valeurs personnalisees](#fonctions-de-meta-box-pour-lire-les-valeurs-personnalisees)
+  * [Les menus](#les-menus)
+    * [Menu defini par l'editeur du site](#menu-defini-par-lediteur-du-site)
+    * [Menu integre au template](#menu-integre-au-template)
+      * [Genere par wordpress](#genere-par-wordpress)
+      * [Par le code](#par-le-code)
+      * [Liens propres a un "post"](#liens-propres-a-un-post)
+      * [Par une seconde "boucle"](#par-une-seconde-boucle)
+  * [Modifier la requete de WordPress](#modifier-la-requete-de-wordpress)
+  * [Liste triee par taxonomie](#liste-triee-par-taxonomie)
+  * [Les images](#les-images)
+    * [L'image a la une (vignette/thumbnail)](#limage-a-la-une-vignettethumbnail)
+    * [Les tailles d'images](#Les-tailles-dimages)
+    * [Les images des champs personnalises](#les-images-des-champs-personnalises)
+
 ## Les fichiers de base
 
 [`style.css`](https://github.com/ppierre/base-theme-wordpress/blob/master/style.css#L2-5) : Donnez un nom à votre thème
@@ -127,7 +151,7 @@ Utilise un "helper" fourni par le plug-in. Mais comprenez que les métadonnées 
 
 ## Les menus
 
-### Menu défini par l'editeur du site
+### Menu defini par l'editeur du site
 
 Ce sont les menus qui peuvent être personnalisés dans l'interface d'administration.
 * [Dire que votre thème supporte cette fonctionnalité.](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L15-16)
@@ -148,6 +172,16 @@ Il existe des fonctions donnant l'URL :
 * [Lien vers la liste des éléments pour un terme d'une taxonomie](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L9-10) [`get_term_link`](http://codex.wordpress.org/Function_Reference/)
 * [Lien vers l'archive d'un type personnalisé](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L11-12) [`get_post_type_archive_link`](http://codex.wordpress.org/Function_Reference/)
 * [Lien vers une page statique](https://github.com/ppierre/base-theme-wordpress/blob/master/footer.php#L14) [`get_permalink`](http://codex.wordpress.org/Function_Reference/get_permalink) et [`get_page_by_title`](http://codex.wordpress.org/Function_Reference/get_page_by_title)
+
+#### Liens propres a un "post"
+
+[`the_permalink`](http://codex.wordpress.org/Function_Reference/the_permalink) donne le lien vers la page d'un "post" (ou contenu personnalisé). Mais vous pouvez aussi :
+* Afficher les "tags" : [`the_tags`](http://codex.wordpress.org/Function_Reference/the_tags)
+* Afficher la ou les "category" : [`the_category`](http://codex.wordpress.org/Function_Reference/the_category)
+* Mais aussi les taxonomies personnalisées : [`the_terms`](http://codex.wordpress.org/Function_Reference/the_terms)
+  * Rq: contrairement aux autres elle demande l'ID du "post" en paramètre (`$post->ID`).
+
+Pour chaque il existe des variantes suivant que vous vouliez gérez vous même l'affichage (boucle en PHP) ou laisser WordPress le faire pour vous.
 
 #### Par une seconde "boucle"
 
@@ -174,16 +208,6 @@ Si vous voulez faire une page qui liste tous les contenus triés suivant les ter
 * Dans l'interface d'administration, faire une page statique du même nom que la taxonomie (elle sera affichée à l’URL `/competences`)
 * Placer [un code affichera vos contenus triés](https://github.com/ppierre/base-theme-wordpress/blob/master/page-competences.php#L18-61), dans le template spécifique à la page ([`page-competences.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/page-competences.php#L2-3))
   * Rq: le code fourni fait plusieurs requêtes, ce qui n'est pas une bonne pratique. Mais bon... c'est pour rester simple.
-
-## Liens propres à un "post"
-
-[`the_permalink`](http://codex.wordpress.org/Function_Reference/the_permalink) donne le lien vers la page d'un "post" (ou contenu personnalisé). Mais vous pouvez aussi :
-* Afficher les "tags" : [`the_tags`](http://codex.wordpress.org/Function_Reference/the_tags)
-* Afficher la ou les "category" : [`the_category`](http://codex.wordpress.org/Function_Reference/the_category)
-* Mais aussi les taxonomies personnalisées : [`the_terms`](http://codex.wordpress.org/Function_Reference/the_terms)
-  * Rq: contrairement aux autres elle demande l'ID du "post" en paramètre (`$post->ID`).
-
-Pour chaque il existe des variantes suivant que vous vouliez gérez vous même l'affichage (boucle en PHP) ou laisser WordPress le faire pour vous.
 
 ## Les images
 

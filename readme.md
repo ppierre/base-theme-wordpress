@@ -217,7 +217,7 @@ Si vous n'avez qu'une image ou qu'une de vos images "symbolise" le contenu : [ut
   * Ajoutez la fonction [`add_theme_support('post-thumbnails');`](http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails) à votre [`functions.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L13-14)
   * Et dans le [paramètre `'support'` de la déclaration de votre type personnalisé](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L60), ajouter `'thumbnail'`.
     * Dans l'interface d'administration, vous devez pouvoir ajouter une "image à la une"
-  * Pour l'affichage, simplement utiliser le "tag" : [`the_post_thumbnail('portrait');`](http://codex.wordpress.org/Function_Reference/the_post_thumbnail)
+  * Pour l'affichage, simplement utiliser le "tag" : [`the_post_thumbnail('portrait');`](http://codex.wordpress.org/Function_Reference/the_post_thumbnail) dans votre tamplate : [`single-projet.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L14)
     * Le paramètre (facultatif) sert à indiquer la taille de l'image.
     
 ### Les tailles d'images

@@ -1,4 +1,4 @@
-# Exemple de code pour thème WordPress
+# Exemple de code pour th&eacute;me WordPress
 
 ## Les fichiers de base
 

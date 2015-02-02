@@ -21,7 +21,7 @@
   * [Liste triee par taxonomie](#liste-triee-par-taxonomie)
   * [Les images](#les-images)
     * [L'image a la une (vignette/thumbnail)](#limage-a-la-une-vignettethumbnail)
-    * [Les tailles d'images](#Les-tailles-dimages)
+    * [Les tailles d'images](#les-tailles-dimages)
     * [Les images des champs personnalises](#les-images-des-champs-personnalises)
 
 ## Les fichiers de base

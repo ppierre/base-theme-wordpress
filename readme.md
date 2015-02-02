@@ -1,4 +1,4 @@
-# Exemple de code pour th&eacute;me WordPress
+# Exemple de code pour theme WordPress
 
 ## Les fichiers de base
 
@@ -37,7 +37,7 @@ Ce sont eux qui affichent le contenu par le biais de la ['boucle' WordPress](htt
 * `home.php` ou [`front-page.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/front-page.php#L2) pour une page ou une liste suivant les réglages
 *[http://codex.wordpress.org/Template_Hierarchy](http://codex.wordpress.org/Template_Hierarchy)*
 
-## Les types personnalisés
+## Les types personnalises
 
 WordPress possède deux types (Post et Page). Mais vous pouvez ajouter vos propres types de contenu :
 * [Le définir dans `functions.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L44-66)
@@ -52,7 +52,7 @@ Quand vous faites un type personnalisé, vous devez réfléchir à :
 
 Lire la documentation et penser à l'option `supports` qui sert à dire quelles fonctionnalités de WordPress sont utiles à votre nouveau contenu.
 
-## Les taxonomies personnalisées
+## Les taxonomies personnalisees
 
 WordPress possède deux taxonomies (Tag et Category). Mais vous pouvez ajouter vos propres classements (taxonomies) :
 * [La définir dans `functions.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L68-85)
@@ -67,7 +67,7 @@ Quand vous faites une taxonomie personnalisée, vous devez réfléchir à :
 
 Lire la documentation et penser à l'option [`hierarchical` qui sert à dire si la nouvelle taxonomie doit se comporter comme des Tag ou comme une Category](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L80).
 
-## Les champs de saisie personnalisés
+## Les champs de saisie personnalises
 
 Quand vous ajoutez un type de contenu personnalisé, WordPress vous laisse choisir les champs de formulaire standard présenté à l'éditeur du site (option `supports` de `register_post_type`).
 
@@ -79,7 +79,7 @@ Avec, vous pourrez :
 * [Déclarer les champs de formulaire (dans `functions.php`).](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L87-125)
 * [Afficher les valeurs saisies dans les templates.](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L15-40)
 
-### Déclarer les champs de formulaire
+### Declarer les champs de formulaire
 
 Les champs de formulaires ajoutés par "Meta Box" sont [regroupés par Boîte](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L95-122).
 
@@ -100,7 +100,7 @@ Lire la documentation et penser à regarder les options des [différents types d
      post radio range select select_advanced slider taxonomy taxonomy_advanced text textarea
      thickbox_image time url user wysiwyg</sub>
 
-### Afficher les valeurs personnalisées
+### Afficher les valeurs personnalisees
 
 (version longue indépendante du plugin, lire titre suivant pour version courte).
 
@@ -113,7 +113,7 @@ Ensuite, utiliser ce code [à l'endroit où vous voulez afficher la valeur](http
 
 Rq. les `print_r` sont juste pour les explications. [Ne pas les inclure dans vos pages !](https://github.com/ppierre/base-theme-wordpress/blob/master/single-projet.php#L18-38)
 
-### Fonctions de "meta box" pour lire les valeurs personnalisées
+### Fonctions de "meta box" pour lire les valeurs personnalisees
 
 Utilise un "helper" fourni par le plug-in. Mais comprenez que les métadonnées sont gérées par WordPress, tout plug-in ne fait qu'ajouter des facilités de saisie. Rien d'autre.
 
@@ -127,16 +127,16 @@ Utilise un "helper" fourni par le plug-in. Mais comprenez que les métadonnées 
 
 ## Les menus
 
-### Menu défini par l'éditeur du site
+### Menu défini par l'editeur du site
 
 Ce sont les menus qui peuvent être personnalisés dans l'interface d'administration.
 * [Dire que votre thème supporte cette fonctionnalité.](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L15-16)
 * [Définir pour chaque menu son identifiant et le nom affiché à l'utilisateur.](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L22-23)
 * [Ajouter au template le code pour ajouter le menu correspondant à un identifiant.](https://github.com/ppierre/base-theme-wordpress/blob/master/header.php#L19-24)
 
-### Menu intégré au template 
+### Menu integre au template 
 
-#### Généré par WordPress
+#### Genere par WordPress
 
 Si vous avez défini des taxonomies personnalisées, vous voulez sans doute permettre au visiteur du site d'utiliser ces "classements" pour naviguer sur le site.
 
@@ -157,7 +157,7 @@ Si vous voulez afficher deux contenus sans rapport sur la même page, vous devez
 
 [*Lire la documentation de WP_Query !*](http://codex.wordpress.org/Class_Reference/WP_Query#Parameters) Pour connaître ses paramètres.
 
-## Modifier la requête de WordPress
+## Modifier la requete de WordPress
 
 Vous ne devez pas utiliser WP_Query pour changer le contenu affiché par défaut (sauf pour les pages statiques). Il faut modifier la requête faite par WordPress.
 
@@ -166,7 +166,7 @@ Vous devez :
 * [Déterminer si c'est la page dont vous voulez modifier la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L135-136)
 * [Modifier les paramètres de la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L137-138)
 
-## Liste triée par taxonomie
+## Liste triee par taxonomie
 
 Quand l'on utilise une taxonomie, il existe une page pour chaque terme (`/competences/HTML`, `/competences/CSS`...).
 
@@ -187,7 +187,7 @@ Pour chaque il existe des variantes suivant que vous vouliez gérez vous même l
 
 ## Les images
 
-### L'image à la une (vignette/thumbnail)
+### L'image a la une (vignette/thumbnail)
 
 Si vous n'avez qu'une image ou qu'une de vos images "symbolise" le contenu : [utilisez cette fonction](http://codex.wordpress.org/Post_Thumbnails).
   * Ajoutez la fonction [`add_theme_support('post-thumbnails');`](http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails) à votre [`functions.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L13-14)
@@ -203,7 +203,7 @@ Les utilisateurs de votre site n'auront qu'à télécharger les images associée
  * Simplement, indiquez dans le [`functions.php` les tailles utilisées dans votre graphisme](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L143-L148) avec la fonction [`add_image_size`](http://codex.wordpress.org/Function_Reference/add_image_size) qui associe des dimensions à un "identifiant".
    * Les fonctions destinées à une balise image (ou l'URL), toutes prennent en paramètre un "identifiant" pour indiquer la taille.
    
-### Les images des champs personnalisés.
+### Les images des champs personnalises.
 
 WordPress stocke simplement un identifiant pour les images (attachement) que vous avez associé à votre poste.
 

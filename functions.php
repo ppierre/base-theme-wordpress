@@ -86,7 +86,7 @@ function ajout_taxonomy() {
 
 /*
  * Ajout de champs personnalisés (avec le plug-in Meta Box à installer)
- * http://www.deluxeblogtips.com/meta-box/getting-started/
+ * http://metabox.io/docs/define-fields/
  * https://github.com/rilwis/meta-box/blob/master/demo/demo.php
  */
 add_filter( 'rwmb_meta_boxes', 'ajout_meta_boxes' );

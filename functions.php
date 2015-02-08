@@ -146,3 +146,27 @@ function modifie_requete_wp( $query ) {
  */
 add_image_size( 'portrait', 60, 100, true );
 add_image_size( 'paysage', 120, 50, false );
+
+/**
+ * Pour aider à trouver les templates à utiliser
+ */
+function debug_template() {
+
+        global $template;
+        $affiche_template = print_r( $template , true );
+        $affiche_body_class = print_r(get_body_class(), true);
+        $affiche_debug = <<<EOD
+Fichier de template :
+$affiche_template
+Body class
+$affiche_body_class
+EOD;
+        // en commentaire dans le code HTML
+        echo("<!--\n$affiche_debug\n-->");
+        // Par JS dans la console
+        $json_debug = json_encode($affiche_debug);
+        echo("<script>console.log($json_debug)</script>");
+
+}
+// Laisser ce code dans le rendu final. Le mettre en commentaire APRES que j'ai noté.
+add_action('wp_footer','debug_template');

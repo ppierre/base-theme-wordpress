@@ -61,6 +61,13 @@ Ce sont eux qui affichent le contenu par le biais de la ['boucle' WordPress](htt
 * `home.php` ou [`front-page.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/front-page.php#L2) pour une page ou une liste suivant les réglages
 *[http://codex.wordpress.org/Template_Hierarchy](http://codex.wordpress.org/Template_Hierarchy)*
 
+### Trouver les fichiers de template à utiliser
+
+* La variable globale `$template` contient le template actuellement utilisé.
+* La fonction [`body_class`](http://codex.wordpress.org/Function_Reference/body_class) que l'on utilise dans la balise `BODY`, donne de bonnes indications sur le nom de template que l'on pourrait utiliser.
+
+**[Ajoutez le code suivant à `functions.php` pour afficher ces informations de template](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L150-172)**
+
 ## Les types personnalises
 
 WordPress possède deux types (Post et Page). Mais vous pouvez ajouter vos propres types de contenu :

@@ -4,8 +4,8 @@
     Rq. C’est pour les taxonomies personnalisé : 'taxonomy-nomTaxonomie.php'
 -->
 <?php get_header(); ?>
-
 <h1>taxonomy-competences.php : liste les pages correspondant à une certaine "competences"</h1>
+<p><?php echo esc_html(term_description()); ?></p>
 <?php
     while ( have_posts() ): the_post();
 ?>

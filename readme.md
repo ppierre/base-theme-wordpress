@@ -99,6 +99,8 @@ Quand vous faites une taxonomie personnalisée, vous devez réfléchir à :
 
 Lire la documentation et penser à l'option [`hierarchical` qui sert à dire si la nouvelle taxonomie doit se comporter comme des Tag ou comme une Category](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L80).
 
+Vous pouvez associer une description à chaque terme (sur la page d'administration de la taxonomie). [Utiliser la fonction `term_description` pour l'afficher.](https://github.com/ppierre/base-theme-wordpress/blob/master/taxonomy-competences.php#L8) 
+
 ## Les champs de saisie personnalises
 
 Quand vous ajoutez un type de contenu personnalisé, WordPress vous laisse choisir les champs de formulaire standard présenté à l'éditeur du site (option `supports` de `register_post_type`).

@@ -4,6 +4,7 @@
     * [Les "include"](#les-include)
     * [Les fichiers CSS et JavaScript](#les-fichiers-css-et-javascript)
   * [Les Templates](#les-templates)
+    * [Trouver les fichiers de template a utiliser](#trouver-les-fichiers-de-template-a-utiliser)
   * [Les types personnalises](#les-types-personnalises)
   * [Les taxonomies personnalisees](#les-taxonomies-personnalisees)
   * [Les champs de saisie personnalises](#les-champs-de-saisie-personnalises)
@@ -61,7 +62,7 @@ Ce sont eux qui affichent le contenu par le biais de la ['boucle' WordPress](htt
 * `home.php` ou [`front-page.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/front-page.php#L2) pour une page ou une liste suivant les réglages
 *[http://codex.wordpress.org/Template_Hierarchy](http://codex.wordpress.org/Template_Hierarchy)*
 
-### Trouver les fichiers de template à utiliser
+### Trouver les fichiers de template a utiliser
 
 * La variable globale `$template` contient le template actuellement utilisé.
 * La fonction [`body_class`](http://codex.wordpress.org/Function_Reference/body_class) que l'on utilise dans la balise `BODY`, donne de bonnes indications sur le nom de template que l'on pourrait utiliser.

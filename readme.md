@@ -19,7 +19,8 @@
       * [Liens propres a un "post"](#liens-propres-a-un-post)
       * [Par une seconde "boucle"](#par-une-seconde-boucle)
   * [Modifier la requete de WordPress](#modifier-la-requete-de-wordpress)
-  * [Liste triee par taxonomie](#liste-triee-par-taxonomie)
+  * [Page listant une taxonomie](#page-listant-une-taxonomie)
+  * [Liste de contenus (liens) triee par taxonomie](#liste-de-contenus-liens-triee-par-taxonomie)
   * [Les images](#les-images)
     * [L'image a la une (vignette/thumbnail)](#limage-a-la-une-vignettethumbnail)
     * [Les tailles d'images](#les-tailles-dimages)
@@ -210,7 +211,13 @@ Vous devez :
 * [Déterminer si c'est la page dont vous voulez modifier la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L135-136)
 * [Modifier les paramètres de la requête](https://github.com/ppierre/base-theme-wordpress/blob/master/functions.php#L137-138)
 
-## Liste triee par taxonomie
+## Page listant une taxonomie
+
+Si vous voulez faire une page qui liste tous les termes de la taxonomie :
+* Dans l'interface d'administration, faire une page statique `"Liste Taxonomie"` (elle sera affichée à l’URL `/liste-taxonomie`)
+* Placer [un code affichera votre taxonomie](https://github.com/ppierre/base-theme-wordpress/blob/master/page-liste-taxonomie.php#L22-45), dans le template spécifique à la page ([`page-liste-taxonomie.php`](https://github.com/ppierre/base-theme-wordpress/blob/master/page-competences.php#L2-4))
+
+## Liste de contenus (liens) triee par taxonomie
 
 Quand l'on utilise une taxonomie, il existe une page pour chaque terme (`/competences/HTML`, `/competences/CSS`...).
 

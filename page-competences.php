@@ -36,7 +36,7 @@
         )); ?>
         <h3><!-- Titre d'une liste correspondant à un terme (avec lien vers la page du terme) -->
             <a href="<?php echo esc_url(get_term_link($a_term, TAXONOMY)) ?>" rel="tag">
-                <?php echo $a_term->name ?>
+                <?php echo esc_html($a_term->name); ?>
             </a>
         </h3>
         <?php

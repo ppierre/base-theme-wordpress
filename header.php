@@ -15,7 +15,7 @@
 <body <?php body_class(); ?>>
 <header>
     <!-- 'home_url()' donne l’URL saisie comme URL d’accueil lors de l’installation -->
-    <h1><a href="<?php echo home_url() ?>">Accueil</a></h1>
+    <h1><a href="<?php echo esc_url(home_url()); ?>">Accueil</a></h1>
     <!-- 'wp_nav_menu(...)' permet d’afficher un menu dont le contenu est saisi
          dans l’interface d’administration -->
     <?php wp_nav_menu( array(

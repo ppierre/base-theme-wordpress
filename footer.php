@@ -7,9 +7,9 @@
         "title_li" => ""
     )); ?>
     <h3>Lien vers la liste des éléments classée par le terme "CSS" dans la taxonomie "competences"</h3>
-    <a href="<?php echo get_term_link("CSS","competences") ?>">liste compétences CSS</a>
+    <a href="<?php echo esc_url(get_term_link("CSS","competences")); ?>">liste compétences CSS</a>
     <h3>Lien vers la liste des Projets (custom post type)</h3>
-    <a href="<?php echo get_post_type_archive_link("projet") ?>">liste projets</a>
+    <a href="<?php echo esc_url(get_post_type_archive_link("projet")); ?>">liste projets</a>
     <h3>Lien vers un page statique avec un template comportant une requête personnalisée : les contenus classés par termes</h3>
     <?php echo get_permalink(get_page_by_title('competences')); ?>
 </aside>

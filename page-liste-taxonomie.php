@@ -28,13 +28,13 @@
             <h3><!-- Titre d'une liste correspondant à un terme (avec lien vers la page du terme) -->
                 <a href="<?php echo esc_url(get_term_link($a_term)) ?>" rel="tag">
                     <!-- le nom du terme -->
-                    <?php echo $a_term->name ?>
+                    <?php echo esc_html($a_term->name); ?>
                     <!-- le nombre de contenus correspondants au terme -->
-                    ( <?php echo $a_term->count ?> )
+                    ( <?php echo esc_html($a_term->count); ?> )
                 </a>
             </h3>
             <!-- Affiche la description du terme -->
-            <p><?php echo esc_html($a_term->description) ?></p>
+            <p><?php echo esc_html($a_term->description); ?></p>
             <!-- Pour les autres informations sur un terme de taxonomie :
             http://codex.wordpress.org/Function_Reference/get_terms#Return_Values
             -->

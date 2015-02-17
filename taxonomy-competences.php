@@ -5,7 +5,7 @@
 -->
 <?php get_header(); ?>
 <h1>taxonomy-competences.php : liste les pages correspondant à une certaine "competences"</h1>
-<p><?php echo esc_html(term_description()); ?></p>
+<p><?php echo esc_html(get_query_var('term')); ?> : </p><?php echo term_description(); ?>
 <?php
     while ( have_posts() ): the_post();
 ?>

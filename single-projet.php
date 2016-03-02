@@ -58,7 +58,7 @@
     Va simplement faire une boucle affichant chaque image.
             -->
             <?php $listImagesID = rwmb_meta("pp_images", array('multiple' => true));
-                  foreach($listImagesID as $imageID):
+                  foreach($listImagesID as $imageID => $imageObj):
             ?>
             <!-- Fonction la plus simple pour afficher une image : juste lui passer l'ID et la taille
     D'autres fonctions existent pour plus de personnalisation ou pour obtenir l'URL et autre renseignement.-->

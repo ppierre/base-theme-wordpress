@@ -57,7 +57,7 @@
             <!-- Récupère le tableau de la liste des images (liste d'ID d'autres formats possibles)
     Va simplement faire une boucle affichant chaque image.
             -->
-            <?php $listImagesID = rwmb_meta("pp_images", array('multiple' => true));
+            <?php $listImagesID = get_post_meta(get_the_ID(),"pp_images",false);
                   foreach($listImagesID as $imageID => $imageObj):
             ?>
             <!-- Fonction la plus simple pour afficher une image : juste lui passer l'ID et la taille
